@@ -13,14 +13,15 @@
 [Project Page](https://jiuntian.github.io/interactedit) |
  [arXiv](https://arxiv.org/abs/2503.09130) |
  [Gradio demo (coming soon)]() |
- [Colab (coming soon)]()
+ [Colab (coming soon)]() |
+ [IEBench Dataset](https://huggingface.co/datasets/jiuntian/IEBench)
  <!-- [paper]() -->
  <!-- [Demo](https://huggingface.co/spaces/interactdiffusion/interactdiffusion) | -->
   <!-- [Video](https://www.youtube.com/watch?v=Uunzufq8m6Y) | -->
 
 [![Paper](https://img.shields.io/badge/cs.CV-arxiv:2503.09130-B31B1B.svg)](https://arxiv.org/abs/2503.09130)
-[![Page Views Count](https://badges.toozhao.com/badges/01JP3YKGCXP3GNAWN6PNJ2V5J0/green.svg)](https://badges.toozhao.com/stats/01JP3YKGCXP3GNAWN6PNJ2V5J0 "Get your own page views count badge on badges.toozhao.com")
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](#)
+[![IEBench Dataset](https://img.shields.io/badge/🤗%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/jiuntian/IEBench)
 <!-- [![Hugging Face](https://img.shields.io/badge/InteractDiffusion-%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/interactdiffusion/interactdiffusion) -->
 
 > TL;DR: We enables zero-shot human-object interaction edit
@@ -32,6 +33,7 @@
 
 ## News
 
+- **[2026.02.25]** IEBench dataset is released on [Huggingface](https://huggingface.co/datasets/jiuntian/IEBench).
 - **[2025.03.14]** InteractionEdit paper is released. Code will be released in future.
 
 
@@ -73,16 +75,17 @@ images[0].save('out.jpg')
 ```
 
 ## IEBench
-We will release IEBench benchmark together with code release.
+IEBench dataset is released on Huggingface Dataset, as [jiuntian/IEBench](https://huggingface.co/datasets/jiuntian/IEBench).
 
 ## TODO
 
-- [ ] IEBench Release
+- [x] IEBench Release
 - [ ] Gradio demo
 - [ ] Diffuser code release
 
 ## Related Works
 1. [[CVPR24] InteractDiffusion: Interaction-Control for Text-to-Image Diffusion Model](https://github.com/jiuntian/interactdiffusion)
+2. [[CVPR26] OneHOI: Unifying Human-Object Interaction Generation and Editing](https://github.com/jiuntian/OneHOI)
 
 ## Citation
 
