@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="InteractEdit: Zero-Shot Editing of Human-Object Interactions in Images">
+    <meta name="description" content="Reference-free human-object interaction editing">
     <meta name="keywords" content="InteractEdit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>InteractEdit: Zero-Shot Editing of Human-Object Interactions in Images</title>
+    <title>Reference-free human-object interaction editing</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -55,25 +55,25 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">InteractEdit: Zero-Shot Editing of <br>Human-Object Interactions in Images</h1>
+                        <h1 class="title is-1 publication-title">Reference-free human-object <br>interaction editing</h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
                                 <a href="https://jiuntian.com/">Jiun Tian Hoe</a><sup>1</sup>,</span>
                             <span class="author-block">
-                                <a href="https://scholar.google.com/citations?user=zo6ni_gAAAAJ">Weipeng Hu</a><sup>1</sup></span>
+                                <a href="https://scholar.google.com/citations?user=zo6ni_gAAAAJ">Weipeng Hu</a><sup>1,2,*</sup>,</span>
                             <span class="author-block">
-                                <a href="https://scholar.google.com/citations?user=eyQteL0AAAAJ">Wei Zhou</a><sup>2&dagger;</sup>,</span>
+                                <a href="https://scholar.google.com/citations?user=eyQteL0AAAAJ">Wei Zhou</a><sup>2</sup>,</span>
                             <span class="author-block">
-                                <a href="https://scholar.google.com/citations?user=-W3ZltsAAAAJ">Chao Xie</a><sup>3&dagger;</sup>,</span>
-                            <span class="author-block">
-                                <a href="https://ziweiwangthu.github.io/">Ziwei Wang</a><sup>1</sup>,</span>
+                                <a href="https://scholar.google.com/citations?user=-W3ZltsAAAAJ">Chao Xie</a><sup>3</sup>,</span>
                             <br>
                             <span class="author-block">
-                                <a href="http://cs-chan.com">Chee Seng Chan</a><sup>4</sup>,</span>
+                                <a href="https://ziweiwangthu.github.io/">Ziwei Wang</a><sup>1</sup>,</span>
                             <span class="author-block">
                                 <a href="https://personal.ntu.edu.sg/exdjiang/">Xudong Jiang</a><sup>1</sup>,</span>
                             <span class="author-block">
-                                <a href="https://personal.ntu.edu.sg/eyptan/">Yap-Peng Tan</a><sup>1</sup></span>
+                                <a href="https://personal.ntu.edu.sg/eyptan/">Yap-Peng Tan</a><sup>1,5</sup>,</span>
+                            <span class="author-block">
+                                <a href="http://cs-chan.com">Chee Seng Chan</a><sup>4,5,*</sup></span>
                             <!--            <br>-->
                         </div>
 
@@ -81,14 +81,24 @@
                             <span class="author-block"><sup>1</sup>Nanyang Technological University,</span>&nbsp;
                             <span class="author-block"><sup>2</sup>Sun Yat-sen University,</span>&nbsp;
                             <span class="author-block"><sup>3</sup>Nanjing Forestry University,</span>&nbsp;
-                            <span class="author-block"><sup>4</sup>Universiti Malaya</span>
+                            <span class="author-block"><sup>4</sup>Universiti Malaya,</span>&nbsp;
+                            <span class="author-block"><sup>5</sup>VinUniversity</span>
                         </div>
                         <div class="is-size-6 publication-authors">
-                            <span class="author-block"><sup>&dagger;</sup>Work done at Nanyang Technological University.</span>
+                            <span class="author-block"><sup>*</sup>Corresponding authors.</span>
                         </div>
 
                         <div class="column has-text-centered">
                             <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0925231226022678"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
                                 <span class="link-block">
                                     <a href="https://arxiv.org/abs/2503.09130"
                                         class="external-link button is-normal is-rounded is-dark">
@@ -105,7 +115,7 @@
                                         <span class="icon">
                                             <i class="fab fa-github"></i>
                                         </span>
-                                        <span>Code (Coming Soon)</span>
+                                        <span>Code</span>
                                     </a>
                                 </span>
                                 <!-- Dataset Link. -->
@@ -136,7 +146,7 @@
                                         <span>SD WebUI Extension</span>
                                     </a>
                                 </span> -->
-                                <!-- Video Link. -->
+                                <!-- Video Link.
                                 <span class="link-block">
                                     <a href="https://youtu.be/?"
                                         class="external-link button is-normal is-rounded is-dark">
@@ -145,7 +155,7 @@
                                         </span>
                                         <span>Video (TODO)</span>
                                     </a>
-                                </span>
+                                </span> -->
                             </div>
                         </div>
                         <div class="is-size-5">
@@ -164,11 +174,8 @@
                     style="width:100%;">
                     <!-- has-text-centered -->
                 <p class="subtitle " style="font-size: 16px;"> 
-                    Existing methods overly preserve structural details from the source image, limiting their ability to
-                     accommodate the substantial non-rigid changes required for effective interaction edits. In contrast, 
-                     Our proposed <span class="dnerf">InteractEdit</span> employs regularization techniques to constrain 
-                     model updates, <b>preserving pretrained target interaction knowledge</b> and enabling <i>zero-shot 
-                    interaction edits</i> while <b>maintaining identity consistency</b>.
+                    Sample results of editing Human-Object Interaction in the source image (left). Existing methods
+                     overly preserve the structure, making interaction edits ineffective.
                 </p>
             </div>
         </div>
@@ -286,12 +293,13 @@
 
                         <h4 class="title">2. Editing Interactions Compared to Other Methods</h4>
                         <p><span style="color:#F97316;">Orange</span> indicates <span style="color:#F97316;">target interaction</span>.</p>
-                        <!-- <img id="dream_booth" autoplay muted loop playsinline height="100%"
+                        <img id="dream_booth" autoplay muted loop playsinline height="100%"
                             src="./static/res/qualitative.jpg" style="width:100%;height:100%;" alt="Qualitative results">
 
-                        <p style="margin-bottom: 60px;"></p> -->
+                        <p style="margin-bottom: 60px;"></p>
                         
-                        <!-- compare 1 -->
+                        <!-- Carousel comparison (disabled, replaced by qualitative.jpg above)
+                         compare 1 
                         <div class="container columns is-centered">
                             <div class="column
                              is-one-quarter-desktop
@@ -349,11 +357,11 @@
                                         <p class="has-text-centered"> Break-A-Scene </p>
                                         <img src="./static/res/compare/x8_y1.jpg"/>
                                     </div>
-                                    <!-- q2 no need, too much-->
+                                     q2 no need, too much
                                 </div>
                             </div>
                         </div>
-                        <!-- compare 2 -->
+                         compare 2 
                         <div class="container columns is-centered">
                             <div class="column
                              is-one-quarter-desktop
@@ -411,11 +419,11 @@
                                         <p class="has-text-centered"> Break-A-Scene </p>
                                         <img src="./static/res/compare/x8_y2.jpg"/>
                                     </div>
-                                    <!-- q2 no need, too much-->
+                                     q2 no need, too much
                                 </div>
                             </div>
                         </div>
-                        <!-- compare 3 -->
+                         compare 3 
                         <div class="container columns is-centered">
                             <div class="column
                              is-one-quarter-desktop
@@ -473,11 +481,11 @@
                                         <p class="has-text-centered"> Break-A-Scene </p>
                                         <img src="./static/res/compare/x8_y3.jpg"/>
                                     </div>
-                                    <!-- q2 no need, too much-->
+                                     q2 no need, too much
                                 </div>
                             </div>
                         </div>
-                        <!-- compare 4 -->
+                         compare 4 
                         <div class="container columns is-centered">
                             <div class="column
                              is-one-quarter-desktop
@@ -535,11 +543,11 @@
                                         <p class="has-text-centered"> Break-A-Scene </p>
                                         <img src="./static/res/compare/x8_y4.jpg"/>
                                     </div>
-                                    <!-- q2 no need, too much-->
+                                     q2 no need, too much
                                 </div>
                             </div>
                         </div>
-                        <!-- compare 5 -->
+                         compare 5 
                         <div class="container columns is-centered">
                             <div class="column
                              is-one-quarter-desktop
@@ -597,11 +605,11 @@
                                         <p class="has-text-centered"> Break-A-Scene </p>
                                         <img src="./static/res/compare/x8_y5.jpg"/>
                                     </div>
-                                    <!-- q2 no need, too much-->
+                                     q2 no need, too much
                                 </div>
                             </div>
                         </div>
-                        <!-- compare 6 -->
+                         compare 6 
                         <div class="container columns is-centered">
                             <div class="column
                              is-one-quarter-desktop
@@ -659,10 +667,11 @@
                                         <p class="has-text-centered"> Break-A-Scene </p>
                                         <img src="./static/res/compare/x8_y6.jpg"/>
                                     </div>
-                                    <!-- q2 no need, too much-->
+                                     q2 no need, too much
                                 </div>
                             </div>
                         </div>
+                        -->
 
                         <!-- <h3 class="title">Qualitative Results</h3>
                         <p class="subtitle has-text-centered" style="font-size: 16px;">
@@ -684,20 +693,20 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            This paper presents InteractEdit, a novel framework for zero-shot Human-Object Interaction (HOI) editing,
-                             addressing the challenging task of transforming an existing interaction in an image into a new, desired
-                              interaction while preserving the identities of the subject and object. Unlike simpler image editing 
-                              scenarios such as attribute manipulation, object replacement or style transfer, HOI editing involves 
-                              complex spatial, contextual, and relational dependencies inherent in humans-objects interactions. 
-                              Existing methods often overfit to the source image structure, limiting their ability to adapt to the 
-                              substantial structural modifications demanded by new interactions. To address this, InteractEdit 
-                              decomposes each scene into subject, object, and background components, then employs Low-Rank Adaptation 
-                              (LoRA) and selective fine-tuning to preserve pretrained interaction priors while learning the visual 
-                              identity of the source image. This regularization strategy effectively balances interaction edits with 
-                              identity consistency. We further introduce IEBench, the most comprehensive benchmark for HOI editing, 
-                              which evaluates both interaction editing and identity preservation. Our extensive experiments show that 
-                              InteractEdit significantly outperforms existing methods, establishing a strong baseline for future HOI 
-                              editing research and unlocking new possibilities for creative and practical applications.
+                            This paper presents InteractEdit, a novel framework for reference-free Human-Object
+                             Interaction (HOI) editing that tackles the challenging task of transforming an existing interaction
+                              in an image into a new, desired interaction while preserving the identities of the subject and object.
+                              Unlike prior image editing tasks such as attribute manipulation, object replacement or style transfer,
+                              HOI editing involves complex spatial, contextual, and relational dependencies inherent in HOI.
+                              Existing methods often overfit to the source image structure, limiting adaptability to the substantial
+                              structural modifications demanded by the new interactions. To address this, InteractEdit disassembles
+                              each scene into subject, object, and background components to disentangle intricate HOI relationship,
+                              and introduces a selective inversion strategy combined with Selective-Rank Adaptation (SeRA) to
+                              leverage pretrained interaction priors while learning visual identity from the source image. This
+                              enables a balanced trade-off between interaction editing and identity preservation. We also introduce
+                              IEBench, a new benchmark for HOI editing, and a new metric that jointly evaluates the trade-off between
+                              successful interaction editing and identity preservation. Extensive experiments show that InteractEdit
+                              outperforms 23 existing methods, providing a strong baseline for future HOI editing research.
                         </p>
                     </div>
                     <!-- <div class="video-container">
@@ -734,11 +743,11 @@
                         <img id="arch" autoplay muted loop playsinline height="100%" src="./static/res/arch.jpg"
                             style="width:100%;height:100%;">
                         <p>
-                            HOI components are disassembled into subject, object, and background clues during inversion. 
-                            LoRA regularization enables non-rigid edits by capturing essential attributes while ignoring
-                             fine-grained structural details. Selective fine-tuning preserves interaction priors while 
-                             adapting to the source image&#39;s identity. Editing reassembles these components with the 
-                             target interaction, using trained LoRA weights to guide the diffusion model.
+                            HOI components are disassembled into subject, object, and background descriptors during
+                             inversion. SeRA regularization enables non-rigid edits by capturing essential identity features
+                             while suppressing overfitting to structural details. Selective inversion preserves pretrained
+                             interaction priors while adapting to the source image&#39;s identity. Editing reassembles these
+                             components with the target interaction, using SeRA weights delta to guide the diffusion model.
                         </p>
                     </div>
                 </div>
@@ -752,7 +761,9 @@
             <h2 class="title">Related Links</h2>
 
             <ul>
-                <li><a href="https://jiuntian.github.io/interactdiffusion/">InteractDiffusion: Interaction Control in
+                <li><a href="https://github.com/jiuntian/OneHOI">[CVPR26] OneHOI: Unifying Human-Object Interaction
+                    Generation and Editing</a></li>
+                <li><a href="https://jiuntian.github.io/interactdiffusion/">[CVPR24] InteractDiffusion: Interaction Control in
                     Text-to-Image Diffusion Models</a></li>
                 <li><a href="https://omriavrahami.com/break-a-scene/">Break-A-Scene: Extracting Multiple Concepts from a Single Image</a></li>
                 <li><a href="https://arxiv.org/abs/2307.01952">SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis</a></li>
@@ -766,14 +777,15 @@
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
             <p> If you use our work in your research, please cite: </p>
-<pre><code>@misc{hoe2025interactedit,
-    title={InteractEdit: Zero-Shot Editing of Human-Object Interactions in Images}, 
-    author={Jiun Tian Hoe and Weipeng Hu and Wei Zhou and Chao Xie and Ziwei Wang and Chee Seng Chan and Xudong Jiang and Yap-Peng Tan},
-    year={2025},
-    eprint={2503.09130},
-    archivePrefix={arXiv},
-    primaryClass={cs.GR},
-    url={https://arxiv.org/abs/2503.09130}, 
+<pre><code>@article{HOE2026InteractEdit,
+    title = {Reference-free human-object interaction editing},
+    journal = {Neurocomputing},
+    pages = {134869},
+    year = {2026},
+    issn = {0925-2312},
+    doi = {https://doi.org/10.1016/j.neucom.2026.134869},
+    url = {https://www.sciencedirect.com/science/article/pii/S0925231226022678},
+    author = {Jiun Tian Hoe and Weipeng Hu and Wei Zhou and Chao Xie and Ziwei Wang and Xudong Jiang and Yap-Peng Tan and Chee Seng Chan},
 }
 </code></pre>
         </div>

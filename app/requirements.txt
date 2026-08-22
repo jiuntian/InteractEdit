@@ -1,0 +1,11 @@
+torch
+torchvision
+diffusers
+transformers
+opencv-python
+safetensors
+accelerate
+Pillow
+matplotlib
+gradio
+peft
