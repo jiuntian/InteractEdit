@@ -14,17 +14,21 @@
  [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0925231226022678) |
  [arXiv](https://arxiv.org/abs/2503.09130) |
  [Code](app/) |
- [IEBench Dataset](https://huggingface.co/datasets/jiuntian/IEBench)
+ [IEBench Dataset](https://huggingface.co/datasets/jiuntian/IEBench) |
+ [IEBench-L Dataset](https://huggingface.co/datasets/jiuntian/IEBench-L)
  <!-- [paper]() -->
  <!-- [Demo](https://huggingface.co/spaces/interactdiffusion/interactdiffusion) | -->
   <!-- [Video](https://www.youtube.com/watch?v=Uunzufq8m6Y) | -->
 
 [![Paper](https://img.shields.io/badge/Paper-Neurocomputing-orange.svg)](https://www.sciencedirect.com/science/article/abs/pii/S0925231226022678)
 [![arXiv](https://img.shields.io/badge/cs.CV-arxiv:2503.09130-B31B1B.svg)](https://arxiv.org/abs/2503.09130)
-[![IEBench Dataset](https://img.shields.io/badge/🤗%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/jiuntian/IEBench)
+[![IEBench Dataset](https://img.shields.io/badge/🤗%20Hugging%20Face-IEBench-blue)](https://huggingface.co/datasets/jiuntian/IEBench)
+[![IEBench-L Dataset](https://img.shields.io/badge/🤗%20Hugging%20Face-IEBench--L-blue)](https://huggingface.co/datasets/jiuntian/IEBench-L)
 <!-- [![Hugging Face](https://img.shields.io/badge/InteractDiffusion-%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/interactdiffusion/interactdiffusion) -->
 
 > TL;DR: We enables zero-shot human-object interaction edit
+
+<sub>Previously available as a preprint titled "InteractEdit: Zero-Shot Editing of Human-Object Interactions in Images".</sub>
 
 ![Teaser figure](docs/static/res/teaser.jpg)
 
@@ -89,7 +93,8 @@ images[0].save('out.jpg')
 ```
 
 ## IEBench
-IEBench dataset is released on Huggingface Dataset, as [jiuntian/IEBench](https://huggingface.co/datasets/jiuntian/IEBench).
+IEBench dataset is released on Huggingface Dataset, as [jiuntian/IEBench](https://huggingface.co/datasets/jiuntian/IEBench),
+and the larger IEBench-L as [jiuntian/IEBench-L](https://huggingface.co/datasets/jiuntian/IEBench-L).
 
 ## TODO
 
@@ -113,6 +118,12 @@ IEBench dataset is released on Huggingface Dataset, as [jiuntian/IEBench](https:
       doi = {https://doi.org/10.1016/j.neucom.2026.134869},
       url = {https://www.sciencedirect.com/science/article/pii/S0925231226022678},
       author = {Jiun Tian Hoe and Weipeng Hu and Wei Zhou and Chao Xie and Ziwei Wang and Xudong Jiang and Yap-Peng Tan and Chee Seng Chan},
+}
+@inproceedings{hoe2026onehoi,
+  title={OneHOI: Unifying Human-Object Interaction Generation and Editing},
+  author={Hoe, Jiun Tian and Hu, Weipeng and Jiang, Xudong and Tan, Yap-Peng and Chan, Chee Seng},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
 }
 ```
 
